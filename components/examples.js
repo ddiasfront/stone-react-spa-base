@@ -12,7 +12,7 @@ function Examples ({ lastUpdate, light }) {
 }
 
 function mapStateToProps (state) {
-  const { lastUpdate, light } = state
+  const { lastUpdate, light } = state.reducer
   return { lastUpdate, light }
 }
 

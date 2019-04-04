@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { startClock, serverRenderClock, rootReducer } from '../store'
+import Example from '../components/examples'
 
 class Index extends React.Component {
   static getInitialProps ({ reduxStore, req }) {
@@ -21,11 +22,16 @@ class Index extends React.Component {
   }
 
   render () {
-    return <h1>123</h1>
+    // return <h1>Z</h1>
+    return <Example/>
   }
+}
+const mapStateToProps = state => {
+  const  { lastUpdate, light } = state.reducer
+  return { lastUpdate, light }
 }
 const mapDispatchToProps = { startClock }
 export default connect(
-  rootReducer,
+  mapStateToProps,
   mapDispatchToProps
 )(Index)
