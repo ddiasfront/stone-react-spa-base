@@ -5,7 +5,9 @@
     "test": "jest",
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "@material-ui/core": "^4.0.0-alpha.6",
@@ -18,6 +20,11 @@
     "redux-devtools-extension": "^2.13.2"
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^4.1.7",
+    "@storybook/addon-links": "^4.1.7",
+    "@storybook/addons": "^4.1.7",
+    "@storybook/react": "^4.1.7",
+    "babel-loader": "^8.0.5",
     "@babel/core": "7.3.4",
     "babel-jest": "24.1.0",
     "enzyme": "3.4.3",
