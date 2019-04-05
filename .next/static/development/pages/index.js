@@ -1,5 +1,50 @@
 ((window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static\\development\\pages\\index.js"],{
 
+/***/ "./components/atoms/text.component.tsx":
+/*!*********************************************!*\
+  !*** ./components/atoms/text.component.tsx ***!
+  \*********************************************/
+/*! exports provided: TextComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TextComponent", function() { return TextComponent; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "C:\\Users\\d.dias\\Documents\\Projetos\\stone-react-spa-base\\components\\atoms\\text.component.tsx";
+
+var TextComponent = function TextComponent(props) {
+  var children = props.children,
+      texttype = props.texttype;
+
+  var renderText = function renderText(texttype) {
+    switch (texttype) {
+      case "span":
+        return react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("span", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 13
+          },
+          __self: this
+        }, children);
+
+      default:
+        return react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("p", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 15
+          },
+          __self: this
+        }, children);
+    }
+  };
+
+  return renderText(texttype);
+};
+
+/***/ }),
+
 /***/ "./components/clock.js":
 /*!*****************************!*\
   !*** ./components/clock.js ***!
@@ -13,7 +58,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "C:\\Users\\Pichau\\Documents\\projetos\\stone-react-spa-base\\components\\clock.js";
+var _jsxFileName = "C:\\Users\\d.dias\\Documents\\Projetos\\stone-react-spa-base\\components\\clock.js";
 
 
 /* harmony default export */ __webpack_exports__["default"] = (function (_ref) {
@@ -29,7 +74,7 @@ var _jsxFileName = "C:\\Users\\Pichau\\Documents\\projetos\\stone-react-spa-base
   }, format(new Date(lastUpdate)), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
     id: "2814028825",
     __self: this
-  }, "div.jsx-2814028825{padding:15px;display:inline-block;color:#82fa58;font:50px menlo,monaco,monospace;background-color:#000;}.light.jsx-2814028825{background-color:#999;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkM6XFxVc2Vyc1xcUGljaGF1XFxEb2N1bWVudHNcXHByb2pldG9zXFxzdG9uZS1yZWFjdC1zcGEtYmFzZVxcY29tcG9uZW50c1xcY2xvY2suanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBSWtCLEFBR3dCLEFBUVMsYUFQRCxTQVF2QixZQVBnQixjQUNxQixpQ0FDYixzQkFDeEIiLCJmaWxlIjoiQzpcXFVzZXJzXFxQaWNoYXVcXERvY3VtZW50c1xccHJvamV0b3NcXHN0b25lLXJlYWN0LXNwYS1iYXNlXFxjb21wb25lbnRzXFxjbG9jay5qcyIsInNvdXJjZXNDb250ZW50IjpbImV4cG9ydCBkZWZhdWx0ICh7IGxhc3RVcGRhdGUsIGxpZ2h0IH0pID0+IHtcclxuICByZXR1cm4gKFxyXG4gICAgPGRpdiBjbGFzc05hbWU9e2xpZ2h0ID8gJ2xpZ2h0JyA6ICcnfT5cclxuICAgICAge2Zvcm1hdChuZXcgRGF0ZShsYXN0VXBkYXRlKSl9XHJcbiAgICAgIDxzdHlsZSBqc3g+e2BcclxuICAgICAgICBkaXYge1xyXG4gICAgICAgICAgcGFkZGluZzogMTVweDtcclxuICAgICAgICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICAgICAgICAgIGNvbG9yOiAjODJmYTU4O1xyXG4gICAgICAgICAgZm9udDogNTBweCBtZW5sbywgbW9uYWNvLCBtb25vc3BhY2U7XHJcbiAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDAwO1xyXG4gICAgICAgIH1cclxuXHJcbiAgICAgICAgLmxpZ2h0IHtcclxuICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6ICM5OTk7XHJcbiAgICAgICAgfVxyXG4gICAgICBgfTwvc3R5bGU+XHJcbiAgICA8L2Rpdj5cclxuICApXHJcbn1cclxuXHJcbmNvbnN0IGZvcm1hdCA9IHQgPT4gdC50b0pTT04oKS5zbGljZSgxMSwgMTkpIC8vIGN1dCBvZmYgZXhjZXB0IGhoOm1tOnNzXHJcbiJdfQ== */\n/*@ sourceURL=C:\\Users\\Pichau\\Documents\\projetos\\stone-react-spa-base\\components\\clock.js */"));
+  }, "div.jsx-2814028825{padding:15px;display:inline-block;color:#82fa58;font:50px menlo,monaco,monospace;background-color:#000;}.light.jsx-2814028825{background-color:#999;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkM6XFxVc2Vyc1xcZC5kaWFzXFxEb2N1bWVudHNcXFByb2pldG9zXFxzdG9uZS1yZWFjdC1zcGEtYmFzZVxcY29tcG9uZW50c1xcY2xvY2suanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBSWtCLEFBR3dCLEFBUVMsYUFQRCxTQVF2QixZQVBnQixjQUNxQixpQ0FDYixzQkFDeEIiLCJmaWxlIjoiQzpcXFVzZXJzXFxkLmRpYXNcXERvY3VtZW50c1xcUHJvamV0b3NcXHN0b25lLXJlYWN0LXNwYS1iYXNlXFxjb21wb25lbnRzXFxjbG9jay5qcyIsInNvdXJjZXNDb250ZW50IjpbImV4cG9ydCBkZWZhdWx0ICh7IGxhc3RVcGRhdGUsIGxpZ2h0IH0pID0+IHtcclxuICByZXR1cm4gKFxyXG4gICAgPGRpdiBjbGFzc05hbWU9e2xpZ2h0ID8gJ2xpZ2h0JyA6ICcnfT5cclxuICAgICAge2Zvcm1hdChuZXcgRGF0ZShsYXN0VXBkYXRlKSl9XHJcbiAgICAgIDxzdHlsZSBqc3g+e2BcclxuICAgICAgICBkaXYge1xyXG4gICAgICAgICAgcGFkZGluZzogMTVweDtcclxuICAgICAgICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICAgICAgICAgIGNvbG9yOiAjODJmYTU4O1xyXG4gICAgICAgICAgZm9udDogNTBweCBtZW5sbywgbW9uYWNvLCBtb25vc3BhY2U7XHJcbiAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDAwO1xyXG4gICAgICAgIH1cclxuXHJcbiAgICAgICAgLmxpZ2h0IHtcclxuICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6ICM5OTk7XHJcbiAgICAgICAgfVxyXG4gICAgICBgfTwvc3R5bGU+XHJcbiAgICA8L2Rpdj5cclxuICApXHJcbn1cclxuXHJcbmNvbnN0IGZvcm1hdCA9IHQgPT4gdC50b0pTT04oKS5zbGljZSgxMSwgMTkpIC8vIGN1dCBvZmYgZXhjZXB0IGhoOm1tOnNzXHJcbiJdfQ== */\n/*@ sourceURL=C:\\Users\\d.dias\\Documents\\Projetos\\stone-react-spa-base\\components\\clock.js */"));
 });
 
 var format = function format(t) {
@@ -66,7 +111,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "C:\\Users\\Pichau\\Documents\\projetos\\stone-react-spa-base\\components\\counter.js";
+var _jsxFileName = "C:\\Users\\d.dias\\Documents\\Projetos\\stone-react-spa-base\\components\\counter.js";
 
 
 
@@ -191,7 +236,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _clock__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./clock */ "./components/clock.js");
 /* harmony import */ var _counter__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./counter */ "./components/counter.js");
-var _jsxFileName = "C:\\Users\\Pichau\\Documents\\projetos\\stone-react-spa-base\\components\\examples.js";
+var _jsxFileName = "C:\\Users\\d.dias\\Documents\\Projetos\\stone-react-spa-base\\components\\examples.js";
 
 
 
@@ -4364,9 +4409,9 @@ function isPlainObject(value) {
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=C%3A%5CUsers%5CPichau%5CDocuments%5Cprojetos%5Cstone-react-spa-base%5Cpages%5Cindex.js!./":
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=C%3A%5CUsers%5Cd.dias%5CDocuments%5CProjetos%5Cstone-react-spa-base%5Cpages%5Cindex.js!./":
 /*!***************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=C%3A%5CUsers%5CPichau%5CDocuments%5Cprojetos%5Cstone-react-spa-base%5Cpages%5Cindex.js ***!
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=C%3A%5CUsers%5Cd.dias%5CDocuments%5CProjetos%5Cstone-react-spa-base%5Cpages%5Cindex.js ***!
   \***************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -8969,9 +9014,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../store */ "./store.js");
-/* harmony import */ var _components_examples__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/examples */ "./components/examples.js");
-/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! isomorphic-unfetch */ "./node_modules/isomorphic-unfetch/browser.js");
-/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _components_atoms_text_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/atoms/text.component */ "./components/atoms/text.component.tsx");
+/* harmony import */ var _components_examples__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/examples */ "./components/examples.js");
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! isomorphic-unfetch */ "./node_modules/isomorphic-unfetch/browser.js");
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_12__);
 
 
 
@@ -8979,7 +9025,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "C:\\Users\\Pichau\\Documents\\projetos\\stone-react-spa-base\\pages\\index.js";
+var _jsxFileName = "C:\\Users\\d.dias\\Documents\\Projetos\\stone-react-spa-base\\pages\\index.js";
+
 
 
 
@@ -9009,7 +9056,8 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("h1", {
+      return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_atoms_text_component__WEBPACK_IMPORTED_MODULE_10__["TextComponent"], {
+        texttype: "span",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 25
@@ -9032,7 +9080,7 @@ function (_React$Component) {
                 isServer = !!req; // DISPATCH ACTIONS HERE ONLY WITH `reduxStore.dispatch`
 
                 _context.next = 4;
-                return isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_11___default()('https://testapi.io/api/ddiasfront//biblioteca');
+                return isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_12___default()("https://testapi.io/api/ddiasfront//biblioteca");
 
               case 4:
                 res = _context.sent;
@@ -9205,12 +9253,12 @@ function initializeStore() {
 
 /***/ 0:
 /*!*******************************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=C%3A%5CUsers%5CPichau%5CDocuments%5Cprojetos%5Cstone-react-spa-base%5Cpages%5Cindex.js ***!
+  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=C%3A%5CUsers%5Cd.dias%5CDocuments%5CProjetos%5Cstone-react-spa-base%5Cpages%5Cindex.js ***!
   \*******************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=C%3A%5CUsers%5CPichau%5CDocuments%5Cprojetos%5Cstone-react-spa-base%5Cpages%5Cindex.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=C%3A%5CUsers%5CPichau%5CDocuments%5Cprojetos%5Cstone-react-spa-base%5Cpages%5Cindex.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=C%3A%5CUsers%5Cd.dias%5CDocuments%5CProjetos%5Cstone-react-spa-base%5Cpages%5Cindex.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=C%3A%5CUsers%5Cd.dias%5CDocuments%5CProjetos%5Cstone-react-spa-base%5Cpages%5Cindex.js!./");
 
 
 /***/ }),
