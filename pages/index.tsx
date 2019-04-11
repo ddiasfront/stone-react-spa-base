@@ -1,33 +1,38 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
-import { updateAnnouncement } from '../states/announcement/actions'
+import React from "react";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { updateAnnouncement } from "../states/announcement/actions";
 
 interface IProps {
-  announcementMessage: string
-  updateAnnouncement: any
+  announcementMessage: any;
+  updateAnnouncement: any;
 }
 
 interface IState {}
 
 class IndexPage extends React.Component<IProps, IState> {
   render() {
-    const { announcementMessage, updateAnnouncement } = this.props
+    const { announcementMessage, updateAnnouncement } = this.props;
     return (
       <div>
         Announcement: {announcementMessage}
-        <button onClick={() => updateAnnouncement('We are closed today!')}>Close!</button>
+        <button onClick={() => updateAnnouncement("We are closed today!")}>
+          Close!
+        </button>
       </div>
-    )
+    );
   }
 }
 
 const mapStateToProps = (state: any) => ({
-  announcementMessage: state.message,
-})
+  announcementMessage: state.announcement.message
+});
 
 const mapDispatchToProps = (dispatch: any) => ({
   updateAnnouncement: bindActionCreators(updateAnnouncement, dispatch)
-})
+});
 
-export default connect(mapStateToProps, mapDispatchToProps)(IndexPage)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(IndexPage);
