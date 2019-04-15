@@ -1,13 +1,13 @@
 import * as React from "react";
 
 type Props = {
-  texttype: string;
+  texttype?: string;
 };
 
-export const TextComponent: React.FC<Props> = props => {
+export const TextComponent: React.FC<Props> = (props: any) => {
   const { children, texttype } = props;
 
-  const renderText = (texttype: string) => {
+  const renderText = (texttype?: string) => {
     switch (texttype) {
       case "span":
         return <span>{children}</span>;

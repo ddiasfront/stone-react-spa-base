@@ -2,17 +2,25 @@ import React from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { updateAnnouncement } from "../states/announcement/actions";
+import fetch from "isomorphic-unfetch";
 
 interface IProps {
-  announcementMessage: any;
+  announcementMessage: boolean;
   updateAnnouncement: any;
 }
 
 interface IState {}
 
 class IndexPage extends React.Component<IProps, IState> {
+  static async getInitialProps() {
+    const res = await fetch("https://testapi.io/api/ddiasfront//biblioteca");
+    const images = await res.json();
+    return images;
+  }
+
   render() {
     const { announcementMessage, updateAnnouncement } = this.props;
+    console.log(this.props);
     return (
       <div>
         Announcement: {announcementMessage}
