@@ -468,9 +468,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! redux */ "redux");
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(redux__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var _states_announcement_actions__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../states/announcement/actions */ "./states/announcement/actions.tsx");
-/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! isomorphic-unfetch */ "isomorphic-unfetch");
-/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _src_states_announcement_actions__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../src/states/announcement/actions */ "./src/states/announcement/actions.tsx");
+/* harmony import */ var _src_components_atoms_Text_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../src/components/atoms/Text.component */ "./src/components/atoms/Text.component.tsx");
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! isomorphic-unfetch */ "isomorphic-unfetch");
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var _src_scss_style_scss__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../src/scss/style.scss */ "./src/scss/style.scss");
+/* harmony import */ var _src_scss_style_scss__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_src_scss_style_scss__WEBPACK_IMPORTED_MODULE_13__);
 
 
 
@@ -479,6 +482,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var _jsxFileName = "C:\\Users\\d.dias\\Documents\\Projetos\\stone-react-spa-base\\pages\\index.tsx";
+
+
 
 
 
@@ -506,16 +511,23 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 25
+          lineNumber: 27
         },
         __self: this
-      }, "Announcement: ", announcementMessage, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("button", {
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_src_components_atoms_Text_component__WEBPACK_IMPORTED_MODULE_11__["TextComponent"], {
+        styleClass: "announcement",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 28
+        },
+        __self: this
+      }, "Announcement:"), " ", announcementMessage, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("button", {
         onClick: function onClick() {
           return updateAnnouncement("We are closed today!");
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 27
+          lineNumber: 29
         },
         __self: this
       }, "Close!"));
@@ -532,7 +544,7 @@ function (_React$Component) {
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_11___default()("https://testapi.io/api/ddiasfront//biblioteca");
+                return isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_12___default()("https://testapi.io/api/ddiasfront//biblioteca");
 
               case 2:
                 res = _context.sent;
@@ -570,7 +582,7 @@ var mapStateToProps = function mapStateToProps(state) {
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
-    updateAnnouncement: Object(redux__WEBPACK_IMPORTED_MODULE_9__["bindActionCreators"])(_states_announcement_actions__WEBPACK_IMPORTED_MODULE_10__["updateAnnouncement"], dispatch)
+    updateAnnouncement: Object(redux__WEBPACK_IMPORTED_MODULE_9__["bindActionCreators"])(_src_states_announcement_actions__WEBPACK_IMPORTED_MODULE_10__["updateAnnouncement"], dispatch)
   };
 };
 
@@ -578,10 +590,69 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 /***/ }),
 
-/***/ "./states/announcement/actions.tsx":
-/*!*****************************************!*\
-  !*** ./states/announcement/actions.tsx ***!
-  \*****************************************/
+/***/ "./src/components/atoms/Text.component.tsx":
+/*!*************************************************!*\
+  !*** ./src/components/atoms/Text.component.tsx ***!
+  \*************************************************/
+/*! exports provided: TextComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TextComponent", function() { return TextComponent; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "C:\\Users\\d.dias\\Documents\\Projetos\\stone-react-spa-base\\src\\components\\atoms\\Text.component.tsx";
+
+var TextComponent = function TextComponent(props) {
+  console.log(props);
+  var children = props.children,
+      texttype = props.texttype;
+
+  var renderText = function renderText(texttype) {
+    switch (texttype) {
+      case "span":
+        return react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("span", {
+          className: props.styleClass,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 15
+          },
+          __self: this
+        }, children);
+
+      default:
+        return react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("p", {
+          className: props.styleClass,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 17
+          },
+          __self: this
+        }, children);
+    }
+  };
+
+  return renderText(texttype);
+};
+
+/***/ }),
+
+/***/ "./src/scss/style.scss":
+/*!*****************************!*\
+  !*** ./src/scss/style.scss ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
+/***/ "./src/states/announcement/actions.tsx":
+/*!*********************************************!*\
+  !*** ./src/states/announcement/actions.tsx ***!
+  \*********************************************/
 /*! exports provided: UPDATE_ANNOUNCEMENT, updateAnnouncement */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 

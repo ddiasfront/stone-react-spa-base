@@ -12078,7 +12078,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_app__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! next/app */ "./node_modules/next/app.js");
 /* harmony import */ var next_app__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(next_app__WEBPACK_IMPORTED_MODULE_10__);
 /* harmony import */ var next_redux_wrapper__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! next-redux-wrapper */ "./node_modules/next-redux-wrapper/es6/index.js");
-/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../store */ "./store.tsx");
+/* harmony import */ var _src_store__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../src/store */ "./src/store.tsx");
 
 
 
@@ -12093,7 +12093,7 @@ var _jsxFileName = "C:\\Users\\d.dias\\Documents\\Projetos\\stone-react-spa-base
 
 
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(next_redux_wrapper__WEBPACK_IMPORTED_MODULE_11__["default"])(_store__WEBPACK_IMPORTED_MODULE_12__["initStore"])(
+/* harmony default export */ __webpack_exports__["default"] = (Object(next_redux_wrapper__WEBPACK_IMPORTED_MODULE_11__["default"])(_src_store__WEBPACK_IMPORTED_MODULE_12__["initStore"])(
 /*#__PURE__*/
 function (_App) {
   Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_7__["default"])(MyApp, _App);
@@ -12188,10 +12188,10 @@ function (_App) {
 
 /***/ }),
 
-/***/ "./states/announcement/actions.tsx":
-/*!*****************************************!*\
-  !*** ./states/announcement/actions.tsx ***!
-  \*****************************************/
+/***/ "./src/states/announcement/actions.tsx":
+/*!*********************************************!*\
+  !*** ./src/states/announcement/actions.tsx ***!
+  \*********************************************/
 /*! exports provided: UPDATE_ANNOUNCEMENT, updateAnnouncement */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -12211,10 +12211,10 @@ var updateAnnouncement = function updateAnnouncement(message) {
 
 /***/ }),
 
-/***/ "./states/announcement/reducer.tsx":
-/*!*****************************************!*\
-  !*** ./states/announcement/reducer.tsx ***!
-  \*****************************************/
+/***/ "./src/states/announcement/reducer.tsx":
+/*!*********************************************!*\
+  !*** ./src/states/announcement/reducer.tsx ***!
+  \*********************************************/
 /*! exports provided: reducer */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -12223,7 +12223,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "reducer", function() { return reducer; });
 /* harmony import */ var _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/assign */ "./node_modules/@babel/runtime-corejs2/core-js/object/assign.js");
 /* harmony import */ var _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./actions */ "./states/announcement/actions.tsx");
+/* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./actions */ "./src/states/announcement/actions.tsx");
 
 
 var initialState = {
@@ -12246,10 +12246,10 @@ var reducer = function reducer() {
 
 /***/ }),
 
-/***/ "./store.tsx":
-/*!*******************!*\
-  !*** ./store.tsx ***!
-  \*******************/
+/***/ "./src/store.tsx":
+/*!***********************!*\
+  !*** ./src/store.tsx ***!
+  \***********************/
 /*! exports provided: initStore */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -12260,7 +12260,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux_devtools_extension__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! redux-devtools-extension */ "./node_modules/redux-devtools-extension/index.js");
 /* harmony import */ var redux_devtools_extension__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(redux_devtools_extension__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var redux_thunk__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! redux-thunk */ "./node_modules/redux-thunk/es/index.js");
-/* harmony import */ var _states_announcement_reducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./states/announcement/reducer */ "./states/announcement/reducer.tsx");
+/* harmony import */ var _states_announcement_reducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./states/announcement/reducer */ "./src/states/announcement/reducer.tsx");
 
 
 

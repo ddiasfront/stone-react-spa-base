@@ -1,5 +1,5 @@
 import React from "react";
-import { TextComponent } from "./text.component";
+import { TextComponent } from "./Text.component";
 import { shallow } from "enzyme";
 
 describe("Renders the text component", () => {
@@ -10,5 +10,9 @@ describe("Renders the text component", () => {
   it("renders the paragraph", () => {
     const wrapper = shallow(<TextComponent>Test</TextComponent>);
     expect(wrapper.exists("p")).toEqual(true);
+  });
+  it("renders with a specific class", () => {
+    const wrapper = shallow(<TextComponent styleClass="testclass">Test</TextComponent>);
+    expect(wrapper.exists('.testclass')).toEqual(true);
   });
 });

@@ -1,8 +1,10 @@
 import React from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { updateAnnouncement } from "../states/announcement/actions";
+import { updateAnnouncement } from "../src/states/announcement/actions";
+import { TextComponent } from '../src/components/atoms/Text.component'
 import fetch from "isomorphic-unfetch";
+import '../src/scss/style.scss'
 
 interface IProps {
   announcementMessage: boolean;
@@ -23,7 +25,7 @@ class IndexPage extends React.Component<IProps, IState> {
     console.log(this.props);
     return (
       <div>
-        Announcement: {announcementMessage}
+        <TextComponent styleClass="announcement">Announcement:</TextComponent> {announcementMessage}
         <button onClick={() => updateAnnouncement("We are closed today!")}>
           Close!
         </button>
