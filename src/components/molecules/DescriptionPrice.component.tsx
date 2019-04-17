@@ -2,7 +2,6 @@ import { TextComponent } from "../atoms/Text.component";
 import Grid from "@material-ui/core/Grid";
 
 import * as React from "react";
-import { GridListTile } from "@material-ui/core";
 
 type Props = {
   description: string;
@@ -16,8 +15,8 @@ export const DescriptionPrice: React.FC<Props> = (props: any) => {
 
   return (
     <Grid sm container>
-      <Grid item xs container direction="column" spacing={16}>
-        <img 
+      <Grid item xs container direction="column">
+        <img
           alt="complex"
           src="https://www.alscofirstaid.com.au/wp-content/uploads/2014/01/placeholder-150x150.png"
         />
