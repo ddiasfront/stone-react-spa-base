@@ -1,13 +1,25 @@
 $color: blue;
-$defaultFont:'PT Sans', sans-serif;;
+$defaultFont:'PT Sans',
+sans-serif;
+;
 
 html {
   font-family: $defaultFont;
 }
+
 .announcement {
   background-color: $color;
 }
 
-.pricedescription {
-  font-size: 14px;
+.descriptionPriceContainer {
+
+  .descriptionPriceImage {
+    width: 150px;
+  }
+
+  p {
+    text-align: center;
+    font-size: 12px;
+  }
+
 }
