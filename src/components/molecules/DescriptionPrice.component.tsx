@@ -1,4 +1,5 @@
 import { TextComponent } from "../atoms/Text.component";
+import { TitleComponent } from "../atoms/Title.component";
 import Grid from "@material-ui/core/Grid";
 import { FormattedNumber } from "react-intl";
 
@@ -11,10 +12,11 @@ type Props = {
   styleClassPrice: string;
   img: string;
   imgAlt: string;
+  bookTitle?: string;
 };
 
 export const DescriptionPrice: React.FC<Props> = (props: any) => {
-  const { description, price, img, imgAlt } = props;
+  const { description, price, img, imgAlt, bookTitle } = props;
 
   const renderDescription = descr => {
     let actualdesc = descr.slice(0, 150);
@@ -24,8 +26,23 @@ export const DescriptionPrice: React.FC<Props> = (props: any) => {
   };
 
   return (
-    <Grid container sm={12} md={4} className="descriptionPriceContainer">
-      <Grid sm={6} item container direction="column">
+    <Grid container className="descriptionPriceContainer">
+      <Grid container sm={12} justify="center" alignItems="center">
+        {bookTitle && (
+          <TitleComponent style={{ margin: "0 0 15px 0" }} titleType="h3">
+            {bookTitle}
+          </TitleComponent>
+        )}
+      </Grid>
+      <Grid
+        sm={6}
+        item
+        container
+        direction="column"
+        justify="center"
+        alignItems="center"
+        style={{ paddingRight: 5 }}
+      >
         <img className="descriptionPriceImage" alt={imgAlt} src={img} />
       </Grid>
       <Grid
@@ -35,6 +52,7 @@ export const DescriptionPrice: React.FC<Props> = (props: any) => {
         justify="center"
         alignItems="center"
         className="info"
+        style={{ paddingLeft: 5 }}
       >
         <TextComponent
           styleClass={

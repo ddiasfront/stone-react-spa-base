@@ -11,10 +11,14 @@ html {
   background-color: $color;
 }
 
+.wrapperCard {
+  max-width: fit-content;
+}
+
 .descriptionPriceContainer {
 
   .descriptionPriceImage {
-    width: 150px;
+    width: 100%;
   }
 
   p {
