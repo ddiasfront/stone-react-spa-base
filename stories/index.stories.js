@@ -10,6 +10,7 @@ import { DescriptionPrice } from "../src/components/molecules/DescriptionPrice.c
 import { CardComponent } from "../src/components/molecules/Card.component";
 import { LibraryCards } from "../src/components/molecules/LibraryCards.component";
 import { AppHeader } from "../src/components/molecules/AppHeader.component";
+import { CartTable } from "../src/components/molecules/CartTable.component";
 import "../src/scss/style.scss";
 
 storiesOf("Componente de Texto", module).add("Renderiza paragrafo", () => (
@@ -55,20 +56,52 @@ storiesOf("Componente de preço e descrição", module).add(
   )
 );
 
-storiesOf("Componente de Card", module).add("Card sem botão", () => (
-  <CardComponent>
-    {" "}
-    <DescriptionPrice
-      description={
-        "Lorem ipsum dolormet, consectetur adipiscing elit. Nulla ac pretium nisi. Aenean ultrices tellus ligula, et vehicula nisl aliquamngue. Nam ultrices rutrum elit, vitae dignissim tellus posuere vel. Fusce non laoreet nisi. Vivamus viverra sed est vel varius. Nulla neque ligula, pharetra et pharetra eget, lacinia vel lorem. Proin ultrices ex turpis, id vestibulum odio hendrerit pulvinar. Nunc eu diam tincidunt, rutrum ante nec, gravida nisl. Pellentesque pulvinar dapibus condimentum. Fusce malesuada feugiat posuere. Interdum et malesuada fames ac ante ipsum primis in faucibus. Phasellus n"
-      }
-      price={123}
-      img={"https://via.placeholder.com/150"}
-      imgAlt={"altimg"}
-      bookTitle={"Título"}
-    />
-  </CardComponent>
+storiesOf("Componente de Coluna de Tabela", module).add("Head", () => (
+  <CartTable
+    TableType="Head"
+    RowHead={[
+      "conochia",
+      "jack johnson",
+      "stone pagamentos",
+      "ipanema",
+      "tiete"
+    ]}
+  />
 ));
+
+storiesOf("Componente de Coluna de Tabela", module).add(
+  "Coluna carrinho",
+  () => (
+    <CartTable
+      TableRowArray={[
+        {
+          bookTitle: "Livro do Breno",
+          code: "1",
+          description: "Descrição aqui",
+          img: "https://via.placeholder.com/150",
+          imgAlt: "Descrição imagem",
+          price: 13.9
+        },
+        {
+          bookTitle: "Livro do Breno",
+          code: "1",
+          description: "Descrição Breno",
+          img: "https://via.placeholder.com/150",
+          imgAlt: "Descrição imagem",
+          price: 13.9
+        },
+        {
+          bookTitle: "Livro do Joca",
+          code: "2",
+          description: "Descrição Joca",
+          img: "https://via.placeholder.com/150",
+          imgAlt: "Descrição imagem",
+          price: 23.3
+        }
+      ]}
+    />
+  )
+);
 
 storiesOf("Componente de Card", module).add("Card com botão", () => (
   <CardComponent withButton={true} clickAction={action("button-click")}>

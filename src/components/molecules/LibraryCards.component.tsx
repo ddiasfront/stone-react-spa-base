@@ -7,7 +7,6 @@ import Book from "../../types/book.type";
 type Props = {
   libraryCards: Array<Book>;
   action?: any;
-  book: Book;
 };
 
 export class LibraryCards extends React.Component<Props> {
@@ -18,7 +17,12 @@ export class LibraryCards extends React.Component<Props> {
         {libraryCards
           ? libraryCards.map((book, key) => {
               return (
-                <CardComponent withButton={true} key={key} clickAction={action} book={book}>
+                <CardComponent
+                  withButton={true}
+                  key={key}
+                  clickAction={action}
+                  book={book}
+                >
                   <DescriptionPrice
                     description={book.description}
                     price={book.price}
