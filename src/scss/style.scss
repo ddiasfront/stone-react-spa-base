@@ -1,7 +1,10 @@
 $color: blue;
 $defaultFont:'PT Sans',
 sans-serif;
-;
+
+body {
+  margin: 0;
+}
 
 html {
   font-family: $defaultFont;

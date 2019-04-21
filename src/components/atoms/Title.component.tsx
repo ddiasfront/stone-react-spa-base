@@ -2,7 +2,7 @@ import * as React from "react";
 
 type Props = {
   titleType?: string;
-  style: object;
+  style?: object;
 };
 
 export const TitleComponent: React.FC<Props> = (props: any) => {

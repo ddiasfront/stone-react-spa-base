@@ -6,7 +6,6 @@ type Props = {
 };
 
 export const TextComponent: React.FC<Props> = (props: any) => {
-  console.log(props)
   const { children, texttype } = props;
 
   const renderText = (texttype?: string) => {

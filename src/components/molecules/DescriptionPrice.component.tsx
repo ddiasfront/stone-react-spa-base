@@ -8,8 +8,8 @@ import * as React from "react";
 type Props = {
   description: string;
   price: number;
-  styleClassDesc: string;
-  styleClassPrice: string;
+  styleClassDesc?: string;
+  styleClassPrice?: string;
   img: string;
   imgAlt: string;
   bookTitle?: string;
@@ -27,46 +27,49 @@ export const DescriptionPrice: React.FC<Props> = (props: any) => {
 
   return (
     <Grid container className="descriptionPriceContainer">
-      <Grid container sm={12} justify="center" alignItems="center">
-        {bookTitle && (
-          <TitleComponent style={{ margin: "0 0 15px 0" }} titleType="h3">
-            {bookTitle}
-          </TitleComponent>
-        )}
+      <Grid item sm={12}>
+        <Grid container justify="center" alignItems="center">
+          {bookTitle && (
+            <TitleComponent style={{ margin: "0 0 15px 0" }} titleType="h3">
+              {bookTitle}
+            </TitleComponent>
+          )}
+        </Grid>
       </Grid>
-      <Grid
-        sm={6}
-        item
-        container
-        direction="column"
-        justify="center"
-        alignItems="center"
-        style={{ paddingRight: 5 }}
-      >
-        <img className="descriptionPriceImage" alt={imgAlt} src={img} />
+      <Grid item sm={6}>
+        <Grid
+          container
+          direction="column"
+          justify="center"
+          alignItems="center"
+          style={{ paddingRight: 5 }}
+        >
+          <img className="descriptionPriceImage" alt={imgAlt} src={img} />
+        </Grid>
       </Grid>
-      <Grid
-        sm={6}
-        container
-        direction="column"
-        justify="center"
-        alignItems="center"
-        className="info"
-        style={{ paddingLeft: 5 }}
-      >
-        <TextComponent
-          styleClass={
-            props.styleClassDesc ? props.styleClassDesc : "description"
-          }
+      <Grid sm={6} item>
+        <Grid
+          container
+          direction="column"
+          justify="center"
+          alignItems="center"
+          className="info"
+          style={{ paddingLeft: 5, height: "100%" }}
         >
-          {renderDescription(description)}
-        </TextComponent>
-        <TextComponent
-          texttype="span"
-          styleClass={props.styleClassPrice ? props.styleClassPrice : "price"}
-        >
-          <FormattedNumber style="currency" currency="BRL" value={price} />
-        </TextComponent>
+          <TextComponent
+            styleClass={
+              props.styleClassDesc ? props.styleClassDesc : "description"
+            }
+          >
+            {renderDescription(description)}
+          </TextComponent>
+          <TextComponent
+            texttype="span"
+            styleClass={props.styleClassPrice ? props.styleClassPrice : "price"}
+          >
+            <FormattedNumber style="currency" currency="BRL" value={price} />
+          </TextComponent>
+        </Grid>
       </Grid>
     </Grid>
   );

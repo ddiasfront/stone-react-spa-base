@@ -8,6 +8,8 @@ import { TextComponent } from "../src/components/atoms/Text.component";
 import { TitleComponent } from "../src/components/atoms/Title.component";
 import { DescriptionPrice } from "../src/components/molecules/DescriptionPrice.component";
 import { CardComponent } from "../src/components/molecules/Card.component";
+import { LibraryCards } from "../src/components/molecules/LibraryCards.component";
+import { AppHeader } from "../src/components/molecules/AppHeader.component";
 import "../src/scss/style.scss";
 
 storiesOf("Componente de Texto", module).add("Renderiza paragrafo", () => (
@@ -81,6 +83,80 @@ storiesOf("Componente de Card", module).add("Card com botão", () => (
     />
   </CardComponent>
 ));
+
+storiesOf("Componente de Header", module).add("Simple Header", () => (
+  <AppHeader />
+));
+
+storiesOf("Componente de Biblioteca", module).add("Biblioteca Livros", () => {
+  const books = [
+    {
+      bookTitle: "Livro do Breno",
+      description: "Descrição aqui",
+      price: 13.9,
+      img: "https://via.placeholder.com/150",
+      imgAlt: "Descrição imagem"
+    },
+    {
+      bookTitle: "Livro do Breno",
+      description: "Descrição aqui",
+      price: 13.9,
+      img: "https://via.placeholder.com/150",
+      imgAlt: "Descrição imagem"
+    },
+    {
+      bookTitle: "Livro do Breno",
+      description: "Descrição aqui",
+      price: 13.9,
+      img: "https://via.placeholder.com/150",
+      imgAlt: "Descrição imagem"
+    },
+    {
+      bookTitle: "Livro do Breno",
+      description: "Descrição aqui",
+      price: 13.9,
+      img: "https://via.placeholder.com/150",
+      imgAlt: "Descrição imagem"
+    },
+    {
+      bookTitle: "Livro do Breno",
+      description: "Descrição aqui",
+      price: 13.9,
+      img: "https://via.placeholder.com/150",
+      imgAlt: "Descrição imagem"
+    },
+    {
+      bookTitle: "Livro do Breno",
+      description: "Descrição aqui",
+      price: 13.9,
+      img: "https://via.placeholder.com/150",
+      imgAlt: "Descrição imagem"
+    },
+    {
+      bookTitle: "Livro do Breno",
+      description: "Descrição aqui",
+      price: 13.9,
+      img: "https://via.placeholder.com/150",
+      imgAlt: "Descrição imagem"
+    },
+    {
+      bookTitle: "Livro do Breno",
+      description: "Descrição aqui",
+      price: 13.9,
+      img: "https://via.placeholder.com/150",
+      imgAlt: "Descrição imagem"
+    },
+    {
+      bookTitle: "Livro do Breno",
+      description: "Descrição aqui",
+      price: 13.9,
+      img: "https://via.placeholder.com/150",
+      imgAlt: "Descrição imagem"
+    }
+  ];
+
+  return <LibraryCards libraryCards={books} />;
+});
 
 // storiesOf("Componente de Card", module).add("Card sem botão", () => (
 //   <CardComponent>Casa</CardComponent>

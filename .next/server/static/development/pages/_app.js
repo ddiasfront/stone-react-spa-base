@@ -1026,6 +1026,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_redux_wrapper__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! next-redux-wrapper */ "next-redux-wrapper");
 /* harmony import */ var next_redux_wrapper__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(next_redux_wrapper__WEBPACK_IMPORTED_MODULE_11__);
 /* harmony import */ var _src_store__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../src/store */ "./src/store.tsx");
+/* harmony import */ var react_intl__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! react-intl */ "react-intl");
+/* harmony import */ var react_intl__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(react_intl__WEBPACK_IMPORTED_MODULE_13__);
 
 
 
@@ -1035,6 +1037,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var _jsxFileName = "C:\\Users\\d.dias\\Documents\\Projetos\\stone-react-spa-base\\pages\\_app.tsx";
+
 
 
 
@@ -1061,23 +1064,29 @@ function (_App) {
       return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(next_app__WEBPACK_IMPORTED_MODULE_10__["Container"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 20
+          lineNumber: 21
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(react_intl__WEBPACK_IMPORTED_MODULE_13__["IntlProvider"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 22
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(react_redux__WEBPACK_IMPORTED_MODULE_9__["Provider"], {
         store: store,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 21
+          lineNumber: 23
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(Component, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, pageProps, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 22
+          lineNumber: 24
         },
         __self: this
-      }))));
+      })))));
     }
   }], [{
     key: "getInitialProps",
@@ -1135,33 +1144,33 @@ function (_App) {
 
 /***/ }),
 
-/***/ "./src/states/announcement/actions.tsx":
-/*!*********************************************!*\
-  !*** ./src/states/announcement/actions.tsx ***!
-  \*********************************************/
-/*! exports provided: UPDATE_ANNOUNCEMENT, updateAnnouncement */
+/***/ "./src/states/books/actions.tsx":
+/*!**************************************!*\
+  !*** ./src/states/books/actions.tsx ***!
+  \**************************************/
+/*! exports provided: ADD_BOOK, addBook */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UPDATE_ANNOUNCEMENT", function() { return UPDATE_ANNOUNCEMENT; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateAnnouncement", function() { return updateAnnouncement; });
-var UPDATE_ANNOUNCEMENT = "[Announcement] update";
-var updateAnnouncement = function updateAnnouncement(message) {
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ADD_BOOK", function() { return ADD_BOOK; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addBook", function() { return addBook; });
+var ADD_BOOK = "[Book] Add";
+var addBook = function addBook(book) {
   return function (dispatch) {
     return dispatch({
-      type: UPDATE_ANNOUNCEMENT,
-      message: message
+      type: ADD_BOOK,
+      book: book
     });
   };
 };
 
 /***/ }),
 
-/***/ "./src/states/announcement/reducer.tsx":
-/*!*********************************************!*\
-  !*** ./src/states/announcement/reducer.tsx ***!
-  \*********************************************/
+/***/ "./src/states/books/reducer.tsx":
+/*!**************************************!*\
+  !*** ./src/states/books/reducer.tsx ***!
+  \**************************************/
 /*! exports provided: reducer */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1170,20 +1179,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "reducer", function() { return reducer; });
 /* harmony import */ var _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/assign */ "./node_modules/@babel/runtime-corejs2/core-js/object/assign.js");
 /* harmony import */ var _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./actions */ "./src/states/announcement/actions.tsx");
+/* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./actions */ "./src/states/books/actions.tsx");
 
 
 var initialState = {
-  message: "No announcement..."
+  Books: []
 };
 var reducer = function reducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
   var action = arguments.length > 1 ? arguments[1] : undefined;
 
   switch (action.type) {
-    case _actions__WEBPACK_IMPORTED_MODULE_1__["UPDATE_ANNOUNCEMENT"]:
+    case _actions__WEBPACK_IMPORTED_MODULE_1__["ADD_BOOK"]:
       return _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, state, {
-        message: action.message
+        Books: state.Books.concat(action.book)
       });
 
     default:
@@ -1209,14 +1218,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux_devtools_extension__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(redux_devtools_extension__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var redux_thunk__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! redux-thunk */ "redux-thunk");
 /* harmony import */ var redux_thunk__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(redux_thunk__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _states_announcement_reducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./states/announcement/reducer */ "./src/states/announcement/reducer.tsx");
+/* harmony import */ var _states_books_reducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./states/books/reducer */ "./src/states/books/reducer.tsx");
 
 
 
 
 var initStore = function initStore(initialState) {
   return Object(redux__WEBPACK_IMPORTED_MODULE_0__["createStore"])(Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
-    announcement: _states_announcement_reducer__WEBPACK_IMPORTED_MODULE_3__["reducer"]
+    booksCartReducer: _states_books_reducer__WEBPACK_IMPORTED_MODULE_3__["reducer"]
   }), initialState, Object(redux_devtools_extension__WEBPACK_IMPORTED_MODULE_1__["composeWithDevTools"])(Object(redux__WEBPACK_IMPORTED_MODULE_0__["applyMiddleware"])(redux_thunk__WEBPACK_IMPORTED_MODULE_2___default.a)));
 };
 
@@ -1374,6 +1383,17 @@ module.exports = require("prop-types");
 /***/ (function(module, exports) {
 
 module.exports = require("react");
+
+/***/ }),
+
+/***/ "react-intl":
+/*!*****************************!*\
+  !*** external "react-intl" ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-intl");
 
 /***/ }),
 
