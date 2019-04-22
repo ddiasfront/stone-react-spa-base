@@ -1,8 +1,8 @@
-import { Books } from "./state";
 import * as bookActions from "./actions";
 
-const initialState: Books = {
-  Books: []
+const initialState: any = {
+  Books: [],
+  FinalValue: 0
 };
 
 export const reducer = (state = initialState, action: any) => {
@@ -14,10 +14,12 @@ export const reducer = (state = initialState, action: any) => {
       ) {
         action.book.quantity = 1;
         return Object.assign({}, state, {
-          Books: state.Books.concat(action.book)
+          Books: state.Books.concat(action.book),
+          FinalValue: state.FinalValue + action.book.price
         });
       } else {
         return Object.assign({}, state, {
+          FinalValue: state.FinalValue + action.book.price,
           Books: state.Books.map(book => {
             if (book.code == action.book.code) {
               return {
@@ -31,18 +33,29 @@ export const reducer = (state = initialState, action: any) => {
         });
       }
     case bookActions.REMOVE_BOOK:
-      return Object.assign({}, state, {
-        Books: state.Books.map(book => {
-          if (book.code == action.book.code && book.quantity >= 1) {
-            return {
-              ...book,
-              quantity: book.quantity - 1
-            };
-          } else {
-            return book;
-          }
-        })
-      });
+      if (action.quantity == 1) {
+        return Object.assign({}, state, {
+          Books: state.Books.filter(book => book.code !== action.book.code),
+          FinalValue: state.FinalValue - action.book.price
+        });
+      } else {
+        return Object.assign({}, state, {
+          FinalValue:
+            state.FinalValue >= 1 ? state.FinalValue - action.book.price : 0,
+          Books:
+            state.Books.length >= 1 &&
+            state.Books.map(book => {
+              if (book.code == action.book.code && book.quantity > 1) {
+                return {
+                  ...book,
+                  quantity: book.quantity - 1
+                };
+              } else {
+                return book;
+              }
+            })
+        });
+      }
     default:
       return state;
   }

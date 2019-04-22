@@ -27,6 +27,7 @@ const CartTable: React.FC<Props> = (props: Props) => {
   } = props;
 
   const RenderRows = (RowsContent, RowType?: string) => {
+    console.log(RowsContent);
     return RowType == "Head" ? (
       <TableRow>
         {RowsContent.map((cell, key) => (
@@ -39,18 +40,23 @@ const CartTable: React.FC<Props> = (props: Props) => {
       RowsContent.map((row, key) => (
         <TableRow key={key}>
           <TableCell align={AlignType ? AlignType : "right"}>
-            {row.bookTitle}
+            {row ? row.bookTitle : false}
           </TableCell>
           <TableCell align={AlignType ? AlignType : "right"}>
-            {row.quantity ? row.quantity : ""}
+            {row ? (row.quantity ? row.quantity : "0") : false}
           </TableCell>
           <TableCell align={AlignType ? AlignType : "right"}>
-            {row.price}
+            {row ? row.price : false}
           </TableCell>
           <TableCell align={AlignType ? AlignType : "right"}>
-            {!WithoutIcon && (
-              <DeleteIcon onClick={() => removeBook(row)} className={"icon"} />
-            )}
+            {row
+              ? !WithoutIcon && (
+                  <DeleteIcon
+                    onClick={() => removeBook(row, row.quantity)}
+                    className={"icon"}
+                  />
+                )
+              : false}
           </TableCell>
         </TableRow>
       ))

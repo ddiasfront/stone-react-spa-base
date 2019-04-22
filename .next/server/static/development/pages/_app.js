@@ -1283,11 +1283,12 @@ var addBook = function addBook(book) {
     });
   };
 };
-var removeBook = function removeBook(book) {
+var removeBook = function removeBook(book, quantity) {
   return function (dispatch) {
     return dispatch({
       type: REMOVE_BOOK,
-      book: book
+      book: book,
+      quantity: quantity
     });
   };
 };
@@ -1312,7 +1313,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var initialState = {
-  Books: []
+  Books: [],
+  FinalValue: 0
 };
 var reducer = function reducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
@@ -1325,10 +1327,12 @@ var reducer = function reducer() {
       })) {
         action.book.quantity = 1;
         return _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_1___default()({}, state, {
-          Books: state.Books.concat(action.book)
+          Books: state.Books.concat(action.book),
+          FinalValue: state.FinalValue + action.book.price
         });
       } else {
         return _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_1___default()({}, state, {
+          FinalValue: state.FinalValue + action.book.price,
           Books: state.Books.map(function (book) {
             if (book.code == action.book.code) {
               return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, book, {
@@ -1342,17 +1346,27 @@ var reducer = function reducer() {
       }
 
     case _actions__WEBPACK_IMPORTED_MODULE_2__["REMOVE_BOOK"]:
-      return _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_1___default()({}, state, {
-        Books: state.Books.map(function (book) {
-          if (book.code == action.book.code && book.quantity >= 1) {
-            return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, book, {
-              quantity: book.quantity - 1
-            });
-          } else {
-            return book;
-          }
-        })
-      });
+      if (action.quantity == 1) {
+        return _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_1___default()({}, state, {
+          Books: state.Books.filter(function (book) {
+            return book.code !== action.book.code;
+          }),
+          FinalValue: state.FinalValue - action.book.price
+        });
+      } else {
+        return _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_1___default()({}, state, {
+          FinalValue: state.FinalValue >= 1 ? state.FinalValue - action.book.price : 0,
+          Books: state.Books.length >= 1 && state.Books.map(function (book) {
+            if (book.code == action.book.code && book.quantity > 1) {
+              return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, book, {
+                quantity: book.quantity - 1
+              });
+            } else {
+              return book;
+            }
+          })
+        });
+      }
 
     default:
       return state;

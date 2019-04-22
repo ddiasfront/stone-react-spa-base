@@ -16,6 +16,7 @@ interface IProps {
   books: Array<Book>;
   booksCartReducer: {
     Books: Array<Book>;
+    FinalValue: number;
   };
   removeBook: any;
 }
@@ -25,28 +26,8 @@ interface State {
 }
 
 class CartPage extends React.Component<IProps, State> {
-  readonly state: State = {
-    FinalPrice: 0
-  };
-
-  updatePrice = () => {
-    const TotalPrice =
-      this.props.booksCartReducer &&
-      this.props.booksCartReducer.Books.length > 0 &&
-      this.props.booksCartReducer.Books.map(book => {
-        return book.price * book.quantity;
-      });
-    const FullPrice = TotalPrice
-      ? TotalPrice.reduce((total, num) => total + num)
-      : "0";
-    FullPrice !== "0" && this.setState({ FinalPrice: FullPrice });
-  };
-
-  componentDidMount() {
-    this.updatePrice();
-  }
-  componentWillReceiveProps() {}
   render() {
+    console.log(this.props);
     return (
       <div>
         <Grid item xs={12}>
@@ -80,7 +61,11 @@ class CartPage extends React.Component<IProps, State> {
                 <TableRow>
                   <TableCell align={"left"}>Total</TableCell>
 
-                  <TableCell align={"left"}>{this.state.FinalPrice}</TableCell>
+                  <TableCell align={"left"}>
+                    {parseFloat(
+                      this.props.booksCartReducer.FinalValue.toString()
+                    ).toFixed(2)}
+                  </TableCell>
                 </TableRow>
               </Table>
             </Paper>
