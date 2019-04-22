@@ -45,11 +45,7 @@ class CartPage extends React.Component<IProps, State> {
   componentDidMount() {
     this.updatePrice();
   }
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.booksCartReducer.Books != this.props.booksCartReducer.Books) {
-      this.updatePrice();
-    }
-  }
+  componentWillReceiveProps() {}
   render() {
     return (
       <div>

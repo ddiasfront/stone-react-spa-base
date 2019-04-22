@@ -17177,7 +17177,6 @@ var reducer = function reducer() {
       }
 
     case _actions__WEBPACK_IMPORTED_MODULE_2__["REMOVE_BOOK"]:
-      debugger;
       return _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_1___default()({}, state, {
         Books: state.Books.map(function (book) {
           if (book.code == action.book.code && book.quantity >= 1) {
