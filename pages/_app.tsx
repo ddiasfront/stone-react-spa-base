@@ -4,6 +4,7 @@ import App, { Container } from "next/app";
 import withRedux from "next-redux-wrapper";
 import { initStore } from "../src/store";
 import { IntlProvider } from "react-intl";
+import CssBaseline from "@material-ui/core/CssBaseline";
 
 export default withRedux(initStore)(
   class MyApp extends App<any> {
@@ -13,6 +14,13 @@ export default withRedux(initStore)(
           ? await Component.getInitialProps(ctx)
           : {}
       };
+    }
+    componentDidMount() {
+      // Remove the server-side injected CSS.
+      const jssStyles = document.querySelector("#jss-server-side");
+      if (jssStyles) {
+        jssStyles.parentNode.removeChild(jssStyles);
+      }
     }
 
     render() {

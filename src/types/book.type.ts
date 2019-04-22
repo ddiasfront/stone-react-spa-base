@@ -4,4 +4,6 @@ export default interface Book {
   img: string;
   imgAlt: string;
   bookTitle: string;
+  code: string;
+  quantity: number;
 }

@@ -10,8 +10,8 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
-    "@material-ui/core": "next",
-    "clsx": "latest",
+    "@material-ui/core": "^4.0.0-alpha.6",
+    "@material-ui/icons": "3.0.2",
     "@types/enzyme": "3.9.1",
     "@types/jest": "^24.0.11",
     "@types/next": "^8.0.1",
@@ -20,8 +20,9 @@
     "@types/react-dom": "^16.8.2",
     "@types/react-redux": "^7.0.6",
     "@zeit/next-sass": "1.0.1",
-    "f eit/next-typescript": "1.1.1",
+    "@zeit/next-typescript": "1.1.1",
     "awesome-typescript-loader": "5.2.1",
+    "clsx": "latest",
     "enzyme": "3.4.3",
     "isomorphic-unfetch": "3.0.0",
     "next": "8.0.4",

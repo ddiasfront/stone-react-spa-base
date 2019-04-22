@@ -25,7 +25,6 @@ class IndexPage extends React.Component<IProps, IState> {
 
   render() {
     const { books } = this.props;
-    console.log(this.props);
     return (
       <div>
         <Grid item xs={12}>
