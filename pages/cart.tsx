@@ -9,12 +9,15 @@ import Table from "@material-ui/core/Table";
 import CartTable from "../src/components/molecules/CartTable.component";
 import TableRow from "@material-ui/core/TableRow";
 import TableCell from "@material-ui/core/TableCell";
+import { removeBook } from "../src/states/books/actions";
+import { bindActionCreators } from "redux";
 
 interface IProps {
   books: Array<Book>;
   booksCartReducer: {
     Books: Array<Book>;
   };
+  removeBook: any;
 }
 
 interface State {
@@ -26,7 +29,7 @@ class CartPage extends React.Component<IProps, State> {
     FinalPrice: 0
   };
 
-  componentDidMount() {
+  updatePrice = () => {
     const TotalPrice =
       this.props.booksCartReducer &&
       this.props.booksCartReducer.Books.length > 0 &&
@@ -37,6 +40,15 @@ class CartPage extends React.Component<IProps, State> {
       ? TotalPrice.reduce((total, num) => total + num)
       : "0";
     FullPrice !== "0" && this.setState({ FinalPrice: FullPrice });
+  };
+
+  componentDidMount() {
+    this.updatePrice();
+  }
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.booksCartReducer.Books != this.props.booksCartReducer.Books) {
+      this.updatePrice();
+    }
   }
   render() {
     return (
@@ -63,6 +75,7 @@ class CartPage extends React.Component<IProps, State> {
                   <CartTable
                     TableRowArray={this.props.booksCartReducer.Books}
                     AlignType={"left"}
+                    removeBook={this.props.removeBook}
                   />
                 ) : (
                   <CartTable WithoutIcon={true} RowHead={[""]} />
@@ -87,7 +100,7 @@ const mapStateToProps = (state: any) => ({
 });
 
 const mapDispatchToProps = (dispatch: any) => ({
-  // addBook: bindActionCreators(addBook, dispatch)
+  removeBook: bindActionCreators(removeBook, dispatch)
 });
 
 export default connect(

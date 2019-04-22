@@ -1264,18 +1264,29 @@ function (_App) {
 /*!**************************************!*\
   !*** ./src/states/books/actions.tsx ***!
   \**************************************/
-/*! exports provided: ADD_BOOK, addBook */
+/*! exports provided: ADD_BOOK, REMOVE_BOOK, addBook, removeBook */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ADD_BOOK", function() { return ADD_BOOK; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOVE_BOOK", function() { return REMOVE_BOOK; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addBook", function() { return addBook; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removeBook", function() { return removeBook; });
 var ADD_BOOK = "[Book] Add";
+var REMOVE_BOOK = "[Book] Remove";
 var addBook = function addBook(book) {
   return function (dispatch) {
     return dispatch({
       type: ADD_BOOK,
+      book: book
+    });
+  };
+};
+var removeBook = function removeBook(book) {
+  return function (dispatch) {
+    return dispatch({
+      type: REMOVE_BOOK,
       book: book
     });
   };
@@ -1329,6 +1340,20 @@ var reducer = function reducer() {
           })
         });
       }
+
+    case _actions__WEBPACK_IMPORTED_MODULE_2__["REMOVE_BOOK"]:
+      debugger;
+      return _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_1___default()({}, state, {
+        Books: state.Books.map(function (book) {
+          if (book.code == action.book.code && book.quantity >= 1) {
+            return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, book, {
+              quantity: book.quantity - 1
+            });
+          } else {
+            return book;
+          }
+        })
+      });
 
     default:
       return state;

@@ -13,10 +13,18 @@ type Props = {
   children?: any;
   AlignType?: "inherit" | "left" | "center" | "justify";
   WithoutIcon?: boolean;
+  removeBook?: any;
 };
 
 const CartTable: React.FC<Props> = (props: Props) => {
-  const { RowHead, TableRowArray, TableType, AlignType, WithoutIcon } = props;
+  const {
+    RowHead,
+    TableRowArray,
+    TableType,
+    AlignType,
+    WithoutIcon,
+    removeBook
+  } = props;
 
   const RenderRows = (RowsContent, RowType?: string) => {
     return RowType == "Head" ? (
@@ -40,7 +48,9 @@ const CartTable: React.FC<Props> = (props: Props) => {
             {row.price}
           </TableCell>
           <TableCell align={AlignType ? AlignType : "right"}>
-            {!WithoutIcon && <DeleteIcon className={"icon"} />}
+            {!WithoutIcon && (
+              <DeleteIcon onClick={() => removeBook(row)} className={"icon"} />
+            )}
           </TableCell>
         </TableRow>
       ))

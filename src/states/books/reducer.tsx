@@ -30,6 +30,20 @@ export const reducer = (state = initialState, action: any) => {
           })
         });
       }
+    case bookActions.REMOVE_BOOK:
+      debugger;
+      return Object.assign({}, state, {
+        Books: state.Books.map(book => {
+          if (book.code == action.book.code && book.quantity >= 1) {
+            return {
+              ...book,
+              quantity: book.quantity - 1
+            };
+          } else {
+            return book;
+          }
+        })
+      });
     default:
       return state;
   }
