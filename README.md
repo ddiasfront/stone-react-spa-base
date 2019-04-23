@@ -4,7 +4,8 @@
 --Instrução como instalar o node-gyp ( https://github.com/nodejs/node-gyp )
 --Clonar Repositório ( Git clone - https://github.com/ddiasfront/stone-react-spa-base.git )
 --Instalar dependências ( comando: npm install )
---Componentes desenvolvidos no storybook ( comando: npm run storybook ) 
+--RODAR EM DEV ( NPM RUN DEV )
+--Componentes desenvolvidos no storybook ( comando: npm run build-storybook && npm run storybook ) 
 --Testes unitários ( comando: npm run test )
 ```
 
