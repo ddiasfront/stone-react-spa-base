@@ -1,5 +1,7 @@
 ## STONE REACT APP
 ```
+--Precisa ter instalado o node-sass global ( npm install -g node-sass ) e o node-gyp também global ( npm install -g node-gyp ) 
+--Instrução como instalar o node-gyp ( https://github.com/nodejs/node-gyp )
 --Clonar Repositório ( Git clone - https://github.com/ddiasfront/stone-react-spa-base.git )
 --Instalar dependências ( comando: npm install )
 --Componentes desenvolvidos no storybook ( comando: npm run storybook ) 
