@@ -9,7 +9,7 @@ import { TitleComponent } from "../src/components/atoms/Title.component";
 import { DescriptionPrice } from "../src/components/molecules/DescriptionPrice.component";
 import { CardComponent } from "../src/components/molecules/Card.component";
 import { LibraryCards } from "../src/components/molecules/LibraryCards.component";
-// import { AppHeader } from "../src/components/molecules/AppHeader.component";
+import { AppHeader } from "../src/components/molecules/AppHeader.component";
 // import  CartTable  from "../src/components/molecules/CartTable.component";
 import "../src/scss/style.scss";
 
