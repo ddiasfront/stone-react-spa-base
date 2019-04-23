@@ -9,8 +9,8 @@ import { TitleComponent } from "../src/components/atoms/Title.component";
 import { DescriptionPrice } from "../src/components/molecules/DescriptionPrice.component";
 import { CardComponent } from "../src/components/molecules/Card.component";
 import { LibraryCards } from "../src/components/molecules/LibraryCards.component";
-import { AppHeader } from "../src/components/molecules/AppHeader.component";
-import { CartTable } from "../src/components/molecules/CartTable.component";
+// import { AppHeader } from "../src/components/molecules/AppHeader.component";
+// import  CartTable  from "../src/components/molecules/CartTable.component";
 import "../src/scss/style.scss";
 
 storiesOf("Componente de Texto", module).add("Renderiza paragrafo", () => (
@@ -56,52 +56,52 @@ storiesOf("Componente de preço e descrição", module).add(
   )
 );
 
-storiesOf("Componente de Coluna de Tabela", module).add("Head", () => (
-  <CartTable
-    TableType="Head"
-    RowHead={[
-      "conochia",
-      "jack johnson",
-      "stone pagamentos",
-      "ipanema",
-      "tiete"
-    ]}
-  />
-));
+// storiesOf("Componente de Coluna de Tabela", module).add("Head", () => (
+//   <CartTable
+//     TableType="Head"
+//     RowHead={[
+//       "conochia",
+//       "jack johnson",
+//       "stone pagamentos",
+//       "ipanema",
+//       "tiete"
+//     ]}
+//   />
+// ));
 
-storiesOf("Componente de Coluna de Tabela", module).add(
-  "Coluna carrinho",
-  () => (
-    <CartTable
-      TableRowArray={[
-        {
-          bookTitle: "Livro do Breno",
-          code: "1",
-          description: "Descrição aqui",
-          img: "https://via.placeholder.com/150",
-          imgAlt: "Descrição imagem",
-          price: 13.9
-        },
-        {
-          bookTitle: "Livro do Breno",
-          code: "1",
-          description: "Descrição Breno",
-          img: "https://via.placeholder.com/150",
-          imgAlt: "Descrição imagem",
-          price: 13.9
-        },
-        {
-          bookTitle: "Livro do Joca",
-          code: "2",
-          description: "Descrição Joca",
-          img: "https://via.placeholder.com/150",
-          imgAlt: "Descrição imagem",
-          price: 23.3
-        }
-      ]}
-    />
-  )
-);
+// storiesOf("Componente de Coluna de Tabela", module).add(
+//   "Coluna carrinho",
+//   () => (
+//     <CartTable
+//       TableRowArray={[
+//         {
+//           bookTitle: "Livro do Breno",
+//           code: "1",
+//           description: "Descrição aqui",
+//           img: "https://via.placeholder.com/150",
+//           imgAlt: "Descrição imagem",
+//           price: 13.9
+//         },
+//         {
+//           bookTitle: "Livro do Breno",
+//           code: "1",
+//           description: "Descrição Breno",
+//           img: "https://via.placeholder.com/150",
+//           imgAlt: "Descrição imagem",
+//           price: 13.9
+//         },
+//         {
+//           bookTitle: "Livro do Joca",
+//           code: "2",
+//           description: "Descrição Joca",
+//           img: "https://via.placeholder.com/150",
+//           imgAlt: "Descrição imagem",
+//           price: 23.3
+//         }
+//       ]}
+//     />
+//   )
+// );
 
 storiesOf("Componente de Card", module).add("Card com botão", () => (
   <CardComponent withButton={true} clickAction={action("button-click")}>

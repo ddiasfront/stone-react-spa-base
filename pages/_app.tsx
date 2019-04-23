@@ -4,7 +4,6 @@ import App, { Container } from "next/app";
 import withRedux from "next-redux-wrapper";
 import { initStore } from "../src/store";
 import { IntlProvider } from "react-intl";
-import CssBaseline from "@material-ui/core/CssBaseline";
 
 export default withRedux(initStore)(
   class MyApp extends App<any> {

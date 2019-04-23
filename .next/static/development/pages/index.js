@@ -34646,7 +34646,7 @@ var removeBook = function removeBook(book, quantity) {
 
 /***/ }),
 
-/***/ 5:
+/***/ 3:
 /*!********************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=C%3A%5CUsers%5Cd.dias%5CDocuments%5CProjetos%5Cstone-react-spa-base%5Cpages%5Cindex.tsx ***!
   \********************************************************************************************************************************************************/
@@ -34669,5 +34669,5 @@ module.exports = dll_6dc2816e14fab51b8269;
 
 /***/ })
 
-},[[5,"static/runtime/webpack.js","styles"]]]));;
+},[[3,"static/runtime/webpack.js","styles"]]]));;
 //# sourceMappingURL=index.js.map
